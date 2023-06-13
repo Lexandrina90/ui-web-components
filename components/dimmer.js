@@ -6,40 +6,38 @@ class Dimmer extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open'});
     const btn = document.createElement('div');
     btn.textContent = "Show";
-    btn.classList.add('btn');
-    
+    btn.classList.add('btn-dimmer');
     
     const dimmer = document.createElement('div');
     dimmer.classList.add('dimmer');
 
-    const content = document.createElement('div');
-    content.classList.add('content');
+    const contentDimmer = document.createElement('div');
+    contentDimmer.classList.add('content-dimmer');
 
     const iconSlot = document.createElement('slot');
     iconSlot.name = `icon`;
-    content.appendChild(iconSlot);
+    contentDimmer.appendChild(iconSlot);
 
     const titleSlot = document.createElement('slot');
     titleSlot.name = `title`;
-    content.appendChild(titleSlot);
+    contentDimmer.appendChild(titleSlot);
 
     const subtitleSlot = document.createElement('slot');
     subtitleSlot.name = `subtitle`;
-    content.appendChild(subtitleSlot);
+    contentDimmer.appendChild(subtitleSlot);
 
     btn.onclick = (event) => {
       event.stopPropagation();
       dimmer.classList.add('visible');
-      console.log('click');
     }
-    window.onclick = () => {
+    contentDimmer.onclick = () => {
       dimmer.classList.remove('visible');
     }
-
-    dimmer.appendChild(content);
+    
+    dimmer.appendChild(contentDimmer);
 
     const styles = `
-      .btn {
+      .btn-dimmer {
         position: relative;
         display: inline-block;
         cursor: pointer;
@@ -70,7 +68,7 @@ class Dimmer extends HTMLElement {
       .dimmer.visible {
         opacity: 1;
       }
-      .content {
+      .content-dimmer {
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -87,8 +85,8 @@ class Dimmer extends HTMLElement {
     style.textContent = styles;
 
     shadow.appendChild(dimmer);
-    shadow.appendChild(style);
     shadow.appendChild(btn);
+    shadow.appendChild(style);
   }
 }
 customElements.define('custom-dimmer', Dimmer); 

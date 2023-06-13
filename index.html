@@ -20,7 +20,9 @@
   <script src="/components/dropdown.js"></script>
   <script src="/components/sidebar.js"></script>
   <script src="/components/steps.js"></script>
-  <script src="/components/dimmer.js"></script>
+  <!-- <script src="/components/dimmer.js"></script> -->
+  <script src="/components/form.js"></script>
+  <script src="/components/comments.js"></script>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -224,15 +226,46 @@
   </custom-steps>
 </div>
 
-<div class="dimmer-component">
+<!-- <div class="dimmer-component">
   <h2>Dimmer</h2>
   <custom-dimmer>
     <img src="/img/dimmer/message.png" slot="icon">
     <span slot="title">Dimmer Message</span>
     <span slot="subtitle">Dimmer sub-title</span>
   </custom-dimmer>
+</div> -->
+
+<div class="form-component">
+  <h2>Form</h2>
+  <custom-form>
+    <label slot="label-1">First Name</label>
+    <input slot="input-1" placeholder="First Name">
+    <label slot="label-2">Last Name</label>
+    <input slot="input-2" placeholder="Last Name">
+    <label slot="check_label">I agree to the Terms and Conditions</label>
+  </custom-form>
+
 </div>
 
+<div class="comments-component">
+  <h2>Comments</h2>
+  <custom-comments>
+    <img slot="avatar-1" src="/img/comments/flash.svg">
+    <a slot="author-1">Flash</a>
+    <span slot="date-1">Today at 5:42PM</span>
+    <div slot="text-1">How artistic!</div>
+
+    <img slot="avatar-2" src="/img/comments/superman.svg">
+    <a slot="author-2">Superman</a>
+    <span slot="date-2">Yesterday at 12:30AM</span>
+    <div slot="text-2">This has been very useful for my research. Thanks as well!</div>
+
+    <img slot="avatar-3" src="/img/comments/joker.svg">
+    <a slot="author-3">Joker</a>
+    <span slot="date-3">5 days ago</span>
+    <div slot="text-3">Dude, this is awesome. Thanks so much</div>
+  </custom-comments>
+</div>
   
 </body>
 </html>

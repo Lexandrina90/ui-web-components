@@ -33,4 +33,6 @@ body > *{
   --dimmer-hover-bg: #29a3cc;
   --dimmer-color: #eef2f4;
   --dimmer-message-color:#bbd7d6;
+  --form-btn-bg: #000;
+  --form-hover-bg: #47b8b4;
 }

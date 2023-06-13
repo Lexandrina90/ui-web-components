@@ -27,7 +27,7 @@ class Label extends HTMLElement {
         content: '';
         position:absolute;
         top: 50%;
-        left: -15px;
+        left: -14.5px;
         transform: translateY(-50%);
         width: 0;
         height: 0;
