@@ -35,4 +35,7 @@ body > *{
   --dimmer-message-color:#bbd7d6;
   --form-btn-bg: #000;
   --form-hover-bg: #47b8b4;
+  --message-bg: #f9cccc;
+  --message-border: #f17676;
+  --message-header: #651616;
 }
