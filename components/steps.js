@@ -31,11 +31,73 @@ class Steps extends HTMLElement {
       slotDescription.name = `description-${i}`;
       content.appendChild(slotDescription);
 
+      const firstStep = steps.querySelector('.step');
+        if (firstStep) {
+          firstStep.classList.add('active');
+        }
+      
+        step.onclick = () => {
+          const activeStep = shadow.querySelectorAll('.step.active');
+          activeStep.forEach((activeStep) => {
+          activeStep.classList.remove('active');
+        });
+        step.classList.add('active');
+        }
+
       step.appendChild(content);
       steps.appendChild(step);
     }
 
-    const styles = ``;
+    const styles = `
+      .steps {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .step {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--toggle-bg-color);
+        padding: 12px;
+        padding-left: 25px;
+        position: relative;
+      }
+      .step:first-child {
+        border-radius: 8px 0px 0px 8px;
+        border-right: none;
+      }
+      .step:last-child {
+        border-radius: 0px 8px 8px 0px;
+        border-left: none;
+      }
+      .step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border: medium none;
+        top: 50%;
+        right:0;
+        z-index: 2;
+        background: #fff;
+        transform: translateY(-50%) translateX(53%) rotate(-45deg);
+        border-right: 1px solid var(--toggle-bg-color);
+        border-bottom: 1px solid var(--toggle-bg-color);
+      }
+      .content {
+        margin-left: 12px;
+      }
+      ::slotted([slot^="title"]) {
+        font-weight: bold;
+      }
+      .step.active {
+        background: var(--steps-active-bg);
+      }
+      .step.active::after {
+        background: var(--steps-active-bg);
+      }
+    `;
     const style = document.createElement('style');
     style.textContent = styles;
 
