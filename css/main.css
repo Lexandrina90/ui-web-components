@@ -29,4 +29,8 @@ body > *{
   --sidebar-bg: #9cf1db;
   --sidebar-before: #47cda9;
   --steps-active-bg:#eae8e8; 
+  --dimmer-btn-bg: #55c6ec;
+  --dimmer-hover-bg: #29a3cc;
+  --dimmer-color: #eef2f4;
+  --dimmer-message-color:#bbd7d6;
 }
