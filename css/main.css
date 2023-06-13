@@ -38,4 +38,7 @@ body > *{
   --message-bg: #f9cccc;
   --message-border: #f17676;
   --message-header: #651616;
+  --minus-bg: #e9a2a2;
+  --plus-bg: #bbf2be;
+   
 }

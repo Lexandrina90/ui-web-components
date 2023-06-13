@@ -30,7 +30,7 @@ class Dimmer extends HTMLElement {
       event.stopPropagation();
       dimmer.classList.add('visible');
     }
-    contentDimmer.onclick = () => {
+    dimmer.onclick = () => {
       dimmer.classList.remove('visible');
     }
     
