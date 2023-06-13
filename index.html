@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<head>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Components</title>
+  <script src="/components/card.js" defer></script>
+  <script src="/components/button.js" defer></script>
+  <script src="/components/input.js" defer></script>
+  <script src="/components/label.js" defer></script>
+  <script src="/components/list.js" defer></script>
+  <script src="/components/breadcrumb.js" defer></script>
+  <script src="/components/menu.js" defer></script>
+  <script src="/components/table.js" defer></script>
+  <script src="/components/accordion.js"></script>
+  <script src="/components/checkbox.js"></script>
+  <script src="/components/radio.js"></script>
+  <script src="/components/slider.js"></script>
+  <script src="/components/toggle.js"></script>
+  <script src="/components/dropdown.js"></script>
+  <script src="/components/sidebar.js"></script>
+  <script src="/components/steps.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="card-component">
+    <h2 class="">Card</h2>
+    <custom-card>
+      <div slot="image">
+       <img src="/img/card/card_image.png" alt="">
+      </div>
+      <div slot="header">Title of Card</div>
+      <div slot="description">Content</div>
+    </custom-card>
+    <custom-card>
+      <div slot="image">
+       <img src="/img/card/card_img.jpg" alt="" width="150px" height="200px">
+      </div>
+      <div slot="header">Title of Card</div>
+      <div slot="description">Content</div>
+    </custom-card>
+  </div>
+  <div class="button-component">
+    <h2>Button</h2>
+    <custom-button>
+      <div slot="hidden"> Shop</div>
+      <div slot="visible">
+        <i class="shop-icon" slot="shop_icon">
+          <img src="/img/button/shop.png" width="20px">
+        </i>
+      </div>
+    </custom-button>
+  </div>
+ <div class="input-component">
+  <h2>Input</h2>
+  <custom-input>
+    <input slot="input" placeholder="Search...">
+  </custom-input>
+ </div>
+ <div class="label-component">
+  <h2>Label</h2>
+  <custom-label>
+    <i slot="label">New</i>
+  </custom-label>
+ </div>
+ <div class="list-component">
+  <h2>List</h2>
+  <custom-list>
+    <div slot="item">
+      <i slot="icon">
+        <img src="/img/list/git_icon.svg">
+      </i>
+      <div slot="content">
+        <a slot="header">Item 1</a>
+        <div slot="description">Description</div>
+      </div>
+    </div>
+    <div slot="item">
+      <i slot="icon">
+        <img src="/img/list/git_icon.svg">
+      </i>
+      <div slot="content">
+        <a slot="header">Item 2</a>
+        <div slot="description">Description</div>
+      </div>
+    </div>
+    <div slot="item">
+      <i slot="icon">
+        <img src="/img/list/git_icon.svg">
+      </i>
+      <div slot="content">
+        <a slot="header">Item 3</a>
+        <div slot="description">Description</div>
+      </div>
+    </div>
+  </custom-list>
+ </div>
+ <div class="breadcrumb-component">
+  <h2>Breadcrumb</h2>
+  <custom-breadcrumb>
+    <a href="#" slot="section-1">Section 1</a>
+    <i slot="arrow-1"></i>
+    <a href="#" slot="section-2">Section 2</a>
+    <i href="#" slot="arrow-2"></i>
+    <a href="#" slot="section-3" class="active">Section 3</a>
+  </custom-breadcrumb>
+ </div>
+ <div class="menu-component">
+  <h2>Menu</h2>
+    <custom-menu>
+      <a slot="item-1" class="active">
+        Item 1
+      </a>
+      <a slot="item-2">
+        Item 2
+      </a>
+      <a slot="item-3">
+        Item 3
+      </a>
+    </custom-menu>
+ </div>
+ <div class="accordion-component">
+  <h2>Accordion</h2>
+    <custom-accordion>
+      <div class="title" slot="title-1">What is a dog?</div>
+      <div class="content" slot="content-1">
+        <p class="transition hidden">
+          A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.
+        </p>
+      </div>
+      <div class="title" slot="title-2">What kinds of dogs are there?</div>
+      <div class="content" slot="content-2">
+        <p class="transition hidden">
+          There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.
+        </p>
+      </div>
+        <div class="title" slot="title-3">How do you acquire a dog?</div>
+      <div class="content" slot="content-3">
+        <p class="transition hidden">
+          Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.
+        </p>
+      </div>
+      
+    </custom-accordion>
+ </div>
+ <div class="checkbox-component">
+  <h2>Checkbox</h2>
+  <custom-checkbox>
+      <label slot="label-1">First Check</label>
+      <label slot="label-2">Second Check</label>
+      <label slot="label-3">Third Check</label>
+  </custom-checkbox>
+ </div>
+ 
+ <div class="radio-component">
+  <h2>Radio</h2>
+  <custom-radio>
+    <label slot="label">How often do you use checkboxes?</label>
+    <label slot="radio_label-1">Once a week</label>
+    <label slot="radio_label-2">2-3 times a week</label>
+    <label slot="radio_label-3">Once a day</label>
+    <label slot="radio_label-4">Twice a day</label>
+  </custom-radio>
+ </div>
+
+ <div class="slider-component">
+  <h2>Slider</h2>
+  <custom-slider>
+    <label slot="label">Outbound Throughput</label>
+    <label slot="slider-1">20 mbps max</label>
+    <label slot="slider-2">10 mbps max</label>
+    <label slot="slider-3">5 mbps max</label>
+  </custom-slider>
+ </div>
+
+ <div class="toggle-component">
+    <h2>Toggle</h2>
+    <custom-toggle>
+      <label slot="toggle">Subscribe to weekly newsletter</label>
+    </custom-toggle>
+ </div>
+
+ <div class="dropdown-component">
+  <h2>Dropdown</h2>
+  <custom-dropdown>
+    <div slot="select">Select Hero</div>
+    <img slot="image-1" src="/img/dropdown/superman.svg">
+    <span slot="hero-1">Superman</span>
+    <img slot="image-2" src="/img/dropdown/joker.svg">
+    <span slot="hero-2">Joker</span>
+    <img slot="image-3" src="/img/dropdown/deathstroke.svg">
+    <span slot="hero-3">Deathstroke</span>
+    <img slot="image-4" src="/img/dropdown/flash.svg">
+    <span slot="hero-4">Flash</span>
+  </custom-dropdown>
+ </div>
+
+<div class="sidebar-component">
+  <h2>Sidebar</h2>
+  <custom-sidebar>
+    <img slot="image-1" src="/img/sidebar/home.svg">
+    <span slot="text-1">Home</span>
+    <img slot="image-2" src="/img/sidebar/search.svg">
+    <span slot="text-2">Search</span>
+    <img slot="image-3" src="/img/sidebar/music.svg">
+    <span slot="text-3">Music</span>
+  </custom-sidebar>
+</div>
+
+<div class="steps-component">
+  <h2>Steps</h2>
+  <custom-steps>
+    <img slot="icon-1" src="/img/steps/shipping.png">
+    <div slot="title-1">Shipping</div>
+    <div slot="description-1">Choose your shipping options</div>
+
+    <img slot="icon-2" src="/img/steps/billing.png">
+    <div slot="title-2">Billing</div>
+    <div slot="description-2">Enter billing information</div>
+
+    <img slot="icon-3" src="/img/steps/inf.png">
+    <div slot="title-3">Confirm Order</div>
+  </custom-steps>
+</div>
+
+  
+</body>
+</html>

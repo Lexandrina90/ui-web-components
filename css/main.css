@@ -1,0 +1,31 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 20px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+body > *{
+  margin: 20px;
+}
+:root {
+  --card-bg: #617e7e;
+  --card-content-bg: #efe7e7;
+  --button-bg: #d7f2ec;
+  --input-border-color: #5facc4;
+  --input-focus-border-color: #0a7191;;
+  --label-bg: #c995f0;
+  --list-border-bg: #afabab; 
+  --breadcrumb-color: #6fa8ee;
+  --breadcrumb-active-color: #1f5495;
+  --slider-bg-color: #80c4f1;
+  --slider-check-color: #f0ebeb; 
+  --slider-check-hover: #c4bfbf; 
+  --slider-border-color: #d2cece; 
+  --toggle-bg-color: #d2cece;
+  --toggle-color: #fcffff; 
+  --toggle-bg-active: #96ebd3;
+  --dropdown-hover-item: #b4dcf1;
+  --sidebar-bg: #9cf1db;
+  --sidebar-before: #47cda9;
+}
