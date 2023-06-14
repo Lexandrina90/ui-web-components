@@ -6,20 +6,49 @@ class Menu extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open'});
     const menu = document.createElement('div');
     menu.classList.add('menu');
-    menu.innerHTML = `
-      <slot name="item"></slot>
-    `;
     const count = 3;
-    for (let i = 1; i <= count; i++) {
-      menu.innerHTML += `
-        <slot name="item-${i}"></slot>
-      `;
+    for (let i=1; i<= count; i++) {
+      const item = document.createElement('div');
+      item.classList.add('item');
+
+      const itemSlot = document.createElement('slot');
+      itemSlot.name = `item-${i}`;
+      item.appendChild(itemSlot);
+
+      const firstItem = menu.querySelector('.item');
+        if (firstItem) {
+          firstItem.classList.add('active');
+        }
+
+        item.onclick = () => {
+          const activeItems = shadow.querySelectorAll('.item.active');
+          activeItems.forEach((activeItem) => {
+            activeItem.classList.remove('active');
+          });
+          item.classList.add('active');
+        };
+
+      menu.appendChild(item);
     }
+  
+    // menu.innerHTML = `
+    //   <slot name="item"></slot>
+    // `;
+    // const count = 3;
+    // for (let i = 1; i <= count; i++) {
+    //   menu.innerHTML += `
+    //     <slot name="item-${i}"></slot>
+    //   `;
+    // }
     const styles = `
       .menu {
         display: flex;
         flex-direction: column;
         margin-right: 100px;
+      }
+      .item {
+        cursor: pointer;
+        margin-top: 4px;
       }
       ::slotted([slot^="item-"]) {
         margin-bottom: 8px;
@@ -33,10 +62,10 @@ class Menu extends HTMLElement {
         height: 145%;
         background: var(--list-border-bg);
       }
-      ::slotted([slot^="item"].active)::before {
+      .item.active ::slotted([slot^="item"])::before {
         background: black;
       }
-      ::slotted([slot^="item"].active) {
+      .item.active ::slotted([slot^="item"]) {
         font-weight: bold;
       }
       
